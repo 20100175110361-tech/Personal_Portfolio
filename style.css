@@ -1,0 +1,902 @@
+/* =========================================
+   1. COLORS (change the colors here)
+   ========================================= */
+:root {
+  --bg: #f3faf9;        /* page background */
+  --alt: #e7f4f2;       /* background of alternate sections */
+  --card: #ffffff;      /* cards and boxes */
+  --text: #12263a;      /* main text */
+  --muted: #55657a;     /* lighter text */
+  --accent: #0f766e;    /* main color: buttons, links */
+  --accent2: #14b8a6;   /* second teal for gradients */
+  --warm: #f5b335;      /* orange highlight */
+  --line: #d3e6e3;      /* borders */
+}
+
+/* Dark theme (used when the moon button is clicked) */
+[data-theme="dark"] {
+  --bg: #0c1a24;
+  --alt: #10222f;
+  --card: #162b3a;
+  --text: #eaf3f5;
+  --muted: #9bb0bd;
+  --accent: #2dd4bf;
+  --accent2: #14b8a6;
+  --warm: #f5b335;
+  --line: #24404f;
+}
+
+
+/* =========================================
+   2. BASIC SETTINGS
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;   /* stops the menu hiding section titles */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 24px 0 10px;
+}
+
+/* Every section has space above, below and on the sides */
+section {
+  padding: 70px 10%;
+}
+
+/* Sections with a slightly different background */
+.alt {
+  background: var(--alt);
+}
+
+/* Small label above a heading, like "ABOUT ME" */
+.tag {
+  display: inline-block;
+  background: var(--line);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 2px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.lead {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+
+/* =========================================
+   3. MENU BAR
+   ========================================= */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Moon button and mobile menu button */
+#themeBtn,
+.menu-btn {
+  width: 38px;
+  height: 38px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.menu-btn {
+  display: none;   /* only shown on mobile */
+}
+
+
+/* =========================================
+   4. BUTTONS
+   ========================================= */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 2px solid var(--accent);
+  border-radius: 30px;
+  background: none;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Filled button */
+.btn.primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+
+/* =========================================
+   5. HOME SECTION
+   ========================================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;   /* text on the left, photo on the right */
+  gap: 40px;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.hello {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 52px;
+
+}
+
+.headline {
+  font-size: 24px;
+  color: var(--muted);
+  margin: 6px 0 14px;
+}
+
+.typing {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.typing {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+/* Home introduction paragraph */
+.hero .lead {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+#typed {
+  color: var(--accent);
+}
+
+#typed {
+  color: var(--accent);
+}
+
+/* Blinking | after the typing text */
+.caret {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 22px;
+  font-weight: bold;
+}
+
+/* Photo with floating logos around it */
+.photo-wrap {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  margin: 0 auto;
+}
+
+/* Only your profile photo gets the round shape and orange border */
+.photo-wrap > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--warm);
+  background: var(--line);
+}
+
+/* The white square holding each logo */
+.badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 52px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  font-size: 28px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* The logo inside each square */
+.badge img {
+  width: 34px;
+  height: 34px;
+}
+
+/* Position of each logo around the photo */
+.b1 {            /* HTML5 */
+  top: -10px;
+  left: -30px;
+}
+
+.b2 {            /* CSS3 */
+  top: -20px;
+  right: -20px;
+}
+
+.b3 {            /* JavaScript */
+  top: 110px;
+  right: -50px;
+}
+
+.b4 {            /* Python */
+  top: 120px;
+  left: -60px;
+}
+
+.b5 {            /* Linux */
+  bottom: -10px;
+  left: 20px;
+}
+
+.b6 {            /* Network */
+  bottom: 20px;
+  right: -30px;
+}
+
+.b7 {            /* top middle */
+  top: -40px;
+  left: 140px;
+}
+
+.b8 {            /* bottom middle */
+  bottom: -40px;
+  right: 110px;
+}
+
+.b9 {            /* lower left */
+  bottom: 90px;
+  left: -50px;
+}
+
+/* =========================================
+   FLOATING LOGOS (like balloons in the air)
+   ========================================= */
+
+/* Three different floating paths, so the logos do not all move the same way */
+@keyframes float1 {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(8px, -16px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes float2 {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(-10px, 14px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes float3 {
+  0%   { transform: translate(0, 0); }
+  33%  { transform: translate(12px, 8px); }
+  66%  { transform: translate(-8px, -12px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Each logo gets its own path, speed and start time */
+.b1 { animation: float1 5s ease-in-out infinite; }
+.b2 { animation: float2 6s ease-in-out infinite 0.5s; }
+.b3 { animation: float3 7s ease-in-out infinite 1s; }
+.b4 { animation: float2 5.5s ease-in-out infinite 1.5s; }
+.b5 { animation: float1 6.5s ease-in-out infinite 0.8s; }
+.b6 { animation: float3 8s ease-in-out infinite 0.3s; }
+.b7 { animation: float2 6s ease-in-out infinite 0.6s; }
+.b8 { animation: float1 7s ease-in-out infinite 1.2s; }
+.b9 { animation: float3 6.5s ease-in-out infinite 0.9s; }
+
+
+/* =========================================
+   6. ABOUT SECTION
+   ========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;   /* photo, then text */
+  gap: 60px;
+  align-items: start;
+}
+
+/* The changing photo (the two old copies are merged into one) */
+.about-img {
+  width: 110%;
+  max-width: 390px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 24px;
+  background: var(--line);
+  transition: opacity 0.5s;   /* smooth fade when the photo changes */
+}
+
+.about-grid p {
+  color: var(--muted);
+  font-size: 18px;      /* smaller text */
+  line-height: 1.7;     /* keeps lines easy to read */
+  margin-bottom: 12px;  /* space between paragraphs */
+}
+
+/* Old small boxes (hidden in the HTML now, kept so nothing breaks) */
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.fact {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.fact span {
+  font-size: 26px;
+}
+
+.fact small {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* ---- NEW: four value cards (What Drives Me, My Approach...) ---- */
+.values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* ---- Four value cards (compact) ---- */
+.values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.value-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.value-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Round icon */
+.value-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--alt);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.value-icon i {
+  color: var(--accent);
+}
+
+.value-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+}
+
+.value-card h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+/* Small colored line under the title */
+.value-line {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 6px 0 8px;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.value-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   7. SKILLS SECTION
+   ========================================= */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* 4 cards in a row */
+  gap: 18px;
+}
+
+.skill {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.skill-icon {
+  font-size: 28px;
+}
+
+.skill h3 {
+  margin: 6px 0 12px;
+  font-size: 18px;
+}
+
+.skill p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Progress bar */
+.bar {
+  height: 8px;
+  background: var(--line);
+  border-radius: 8px;
+  margin: 14px 0;
+  overflow: hidden;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0;                 /* JavaScript sets the real width */
+  background: var(--accent);
+  border-radius: 8px;
+  transition: width 1.2s;
+}
+
+/* Small rounded tags (HTML, CSS, Python...) */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.chips li {
+  background: var(--alt);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   8. PROJECTS SECTION
+   ========================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* 3 cards in a row */
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+/* Picture area at the top of a project card */
+.thumb {
+  height: 160px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  padding: 18px;
+}
+
+.card-body h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.card-body p {
+  flex: 1;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+
+
+/* =========================================
+   9. EDUCATION TIMELINE
+   ========================================= */
+/* ---- Education and certification cards ---- */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.edu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+}
+
+.edu-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--alt);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.edu-card h4 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.edu-place {
+  color: var(--text);
+  font-size: 15px;
+}
+
+.edu-date {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* =========================================
+   10. CONTACT SECTION
+   ========================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;   /* contact cards, then the form */
+  gap: 30px;
+  align-items: start;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 12px;
+}
+
+.c-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.c-card span {
+  font-size: 26px;
+}
+
+.c-card small {
+  display: block;
+  color: var(--muted);
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* Message under the form (error or thank you) */
+.error {
+  min-height: 22px;
+  font-weight: bold;
+}
+
+.error.ok {
+  color: var(--accent);
+}
+
+.error.bad {
+  color: #d64545;
+}
+
+
+/* =========================================
+   11. FOOTER AND BACK-TO-TOP BUTTON
+   ========================================= */
+footer {
+  text-align: center;
+  padding: 28px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+#toTop {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;   /* hidden until you scroll down */
+}
+
+#toTop.show {
+  display: block;
+}
+
+
+/* =========================================
+   12. TABLET (screens smaller than 950px)
+   ========================================= */
+@media (max-width: 950px) {
+  .skill-grid {
+    grid-template-columns: 1fr 1fr;   /* 2 cards in a row */
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* =========================================
+   13. MOBILE (screens smaller than 700px)
+   ========================================= */
+@media (max-width: 700px) {
+
+  /* Show the menu button, hide the links until it is clicked */
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+
+  .b7 { left: 90px; }
+  .b8 { right: 70px; }
+  .b9 { left: -10px; }
+
+  /* Put everything in one column */
+  .hero,
+  .about-grid,
+  .contact-grid,
+  .skill-grid,
+  .card-grid,
+  .values {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  /* Photo goes above the text */
+  .photo-wrap {
+    order: -1;
+    width: 240px;
+    height: 240px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  /* Timeline becomes a vertical list */
+  .timeline {
+    flex-direction: column;
+  }
+
+  .timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 23px;
+    right: auto;
+    border-top: none;
+    border-left: 2px dotted var(--accent);
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .step .dot {
+    margin: 0;
+    flex-shrink: 0;
+  }
+}

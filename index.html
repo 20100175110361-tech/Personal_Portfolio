@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>1
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | Yeshi Peldon</title> 
+  <meta name="description" content="Portfolio of Yeshi Peldon: skills, projects, education and contact details.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="#home" class="logo"> <span id="logo"></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  <nav id="menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+    <button id="themeBtn" aria-label="Toggle dark and light theme">🌙</button>
+    <a class="btn primary" id="cvLink" href="cv.pdf" download></a>
+  </nav>
+</header>
+
+
+<main>
+  <!-- 1. HOME -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <p class="hello">Hello, I'm</p>
+      <h1 id="name"></h1>
+      <h2 class="headline" id="headline"></h2>
+      <p class="typing">I like <b id="typed"></b><span class="caret">|</span></p>
+      <p class="lead" id="intro"></p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">📁 View my projects</a>
+        <a class="btn" href="#contact">✉ Contact me</a>
+  </a>
+      </div>
+      <div class="socials" id="socials"></div>
+      
+    </div>
+        <div class="photo-wrap">
+      <img id="photo" alt="Photo of Yeshi Peldon">
+
+
+
+      <span class="badge b1"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt="HTML5"></span>
+      <span class="badge b2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt="CSS3"></span>
+      <span class="badge b3"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="JavaScript"></span>
+      <span class="badge b4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="Python"></span>
+      <span class="badge b5"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linux/linux-original.svg" alt="Linux"></span>
+      <span class="badge b6">🌐</span>
+    </div>
+  </section>
+    
+
+  <!-- 2. ABOUT ME -->
+  <section id="about" class="alt">
+    <span class="tag">ABOUT ME</span>
+
+    <div class="about-grid">
+      <img id="photo2" class="about-img" alt="Yeshi Peldon">
+      <div>
+        <h2>Who I Am</h2>
+        <p><strong>Hello! I’m Yeshi Peldon,</strong> a motivated and curious student who enjoys learning how technology works and using it to build useful things.</p>
+        <p>I’m a 2nd year Computer Systems and Networking student at Jigme Namgyel Engineering College, Bhutan. My studies cover networking, system administration, and web development, and I apply them through hands-on labs and projects.</p>
+        <p>I enjoy building responsive websites with HTML, CSS, JavaScript and Bootstrap, and I’m equally interested in designing, configuring and troubleshooting computer networks.</p>
+        <p>I aim to become a skilled network engineer and web developer who can build reliable, secure and user-friendly systems. I’m looking for internships and projects where I can gain real-world experience and keep growing.</p>
+
+        <!-- Old items filled by script.js: hidden so the script does not break -->
+        <p id="aboutText" style="display:none"></p>
+        <div id="facts" style="display:none"></div>
+      </div>
+    </div>
+
+    <!-- NEW: four value cards -->
+    <div class="values">
+
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-regular fa-lightbulb"></i></div>
+        <div>
+          <h3>What Drives Me</h3>
+          <span class="value-line"></span>
+          <p>Curiosity, creativity, and the desire to understand how technology can make a positive impact.</p>
+        </div>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+        <div>
+          <h3>My Approach</h3>
+          <span class="value-line"></span>
+          <p>I believe in learning by doing, solving problems step by step, and improving through practice.</p>
+        </div>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-users"></i></div>
+        <div>
+          <h3>Teamwork</h3>
+          <span class="value-line"></span>
+          <p>I enjoy collaborating, sharing ideas, and learning from others. Together we can achieve more.</p>
+        </div>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-rocket"></i></div>
+        <div>
+          <h3>My Mindset</h3>
+          <span class="value-line"></span>
+          <p>Stay curious, accept challenges, and keep growing, because there is always something new to learn.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. SKILLS -->
+  <section id="skills">
+    <span class="tag">MY SKILLS</span>
+    <h2>Technical Skills</h2>
+    <div class="skill-grid" id="skillGrid"></div>
+    <h3>Other skills</h3>
+    <ul class="chips" id="softSkills"></ul>
+  </section>
+
+  <!-- 4. PROJECTS -->
+  <section id="projects" class="alt">
+    <span class="tag">MY PROJECTS</span>
+    <h2>Featured Projects</h2>
+
+    <!-- Old grid filled by script.js: kept but hidden so the script does not break -->
+    <div class="card-grid" id="projectGrid" style="display:none"></div>
+
+    <div class="card-grid">
+
+      <!-- PROJECT 1 -->
+      <div class="card">
+        <div class="thumb">📅</div>
+        <div class="card-body">
+          <h3>JNEC Events Hub</h3>
+          <p>A responsive college events website developed to display upcoming events, provide event details, and simplify event discovery. It features an organized interface, interactive search and filtering, and a user-friendly design to help students explore campus activities easily.</p>
+
+          <p class="tech-label">Technologies used:</p>
+          <ul class="chips">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Bootstrap</li>
+            <li>JavaScript</li>
+          </ul>
+          <div class="card-links">
+            <a class="btn" href="[EDIT: live demo link]" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn" href="https://github.com/20100175110361-tech/events_hub" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      
+<!-- PROJECT 2 -->
+<div class="card">
+  <div class="thumb">🛕</div>
+  <div class="card-body">
+   
+<h3>Monastery Event Management System</h3>
+<p>A web-based platform designed to modernize monastery event management by organizing prayers, festivals, and religious teachings in one place. It simplifies event scheduling, participant registration, attendance tracking, and donation management, helping reduce manual paperwork and improve communication among monks, organizers, and devotees.</p>
+
+
+    <p class="tech-label">Technologies used:</p>
+    <ul class="chips">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Bootstrap</li>
+    </ul>
+
+    <div class="card-links">
+      <a class="btn" href="https://www.figma.com/proto/rXRZcj9P3mrAgqF5iVPZJl/Monastery-Event-Management-System?node-id=292-213&p=f&t=hu7hgURTXdOguQWX-0&scaling=min-zoom&content-scaling=fixed&page-id=200%3A45&starting-point-node-id=292%3A213" target="_blank" rel="noopener">View Project</a>
+    </div>
+  </div>
+
+</div>
+
+
+      <!-- PROJECT 3 -->
+      <div class="card">
+        <div class="thumb">🖥️</div>
+        <div class="card-body">
+          <h3>Windows Server DNS Lab</h3>
+          <p>A practical networking project focused on configuring and testing a DNS and DHCP server using Windows Server in a virtualized environment. The setup connects a Windows client to the server, demonstrating domain name resolution, network communication, and essential server administration skills.</p>
+
+          <p class="tech-label">Technologies used:</p>
+          <ul class="chips">
+            <li>GNS3</li>
+            <li>Windows Server</li>
+            <li>DNS</li>
+            <li>VirtualBox</li>
+          </ul>
+          <div class="card-links">
+            <a class="btn" href="file:///C:/Users/YESHEY/Desktop/ass/Lab2(DHCP)_05250203.pdf" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. EDUCATION -->
+    
+  <section id="education">
+    <span class="tag">MY JOURNEY</span>
+    <h2>Education &amp; Certifications </h2>
+
+    <!-- Old timeline: kept but hidden so script.js does not break -->
+    <div class="timeline" id="timeline" style="display:none"></div>
+
+    <div class="edu-grid">
+
+      <!-- LEFT: EDUCATION (oldest first) -->
+      <div>
+        <h3>🎓 Education</h3>
+
+        <!-- 1. Higher Secondary -->
+        <div class="edu-card">
+          <div class="edu-icon">🏫</div>
+          <div>
+            <h4>Higher Secondary Education (Class IX-XII)</h4>
+            <p class="edu-place">Wanakha Central School, Paro</p>
+            <p class="edu-date">[2020-2022] · Class X]</p>
+            <p class="edu-place">Gongzim Ugyen Dorji High School, Haa</p>
+            <p class="edu-date">[2023-2024] · Commerce]</p>
+          </div>
+        
+        </div>
+
+        <!-- 2. College -->
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div>
+            <h4>Diploma in Computer Systems and Networking</h4>
+            <p class="edu-place">Jigme Namgyel Engineering College, Bhutan</p>
+            <p class="edu-date">[2025] – 2026 · 2nd year</p>
+            <ul class="chips">
+              <li>computer Networking</li>
+              <li>System Administration</li>
+              <li>Web Development</li>
+              <li>GNS3</li>
+              <li>Linux</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: CERTIFICATIONS -->
+      <div>
+        <h3>🏅 Certifications</h3>
+
+        <div class="edu-card">
+          <div class="edu-icon">📜</div>
+          <div>
+            <h4>Master Full-Stack Web Development with Laravel &amp; PHP</h4>
+            <p class="edu-place"> By Board In nity and offered through Coursera</p>
+            <p class="edu-date">2026</p>
+            <h4>Python Tkinter: Design, Build &amp; Integrate GUI</h4>
+            <p class="edu-place">By Board In nity and offered through Coursera</p>
+            <p class="edu-date">2026</p>
+          </div>
+        </div>
+        
+
+        <div class="edu-card">
+          <div class="edu-icon">📚</div>
+          <div>
+            <h4>Master Full-Stack Web Development with Laravel &amp; PHP</h4>
+            <a href="https://coursera.org/verify/UJGE1GXIW1JA " target="_blank" rel="noopener">View certificate →</a>
+          <h4>Python Tkinter: Design, Build &amp; Integrate GUI</h4>
+           <a href="https://coursera.org/verify/UWK0LKJLFMB2" target="_blank" rel="noopener">View certificate →</a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. CONTACT -->
+  
+  <section id="contact" class="alt">
+    <span class="tag">CONTACT ME</span>
+    <h2>Let's Connect</h2>
+    <p class="lead">Feel free to reach out for collaborations, questions or just to say hi!</p>
+    <div class="contact-grid">
+
+      <!-- Old cards filled by script.js: kept but hidden so the script does not break -->
+      <div id="contactCards" style="display:none"></div>
+
+      <!-- NEW: my own contact cards -->
+      <div class="contact-cards">
+
+        <a class="c-card" href="mailto:[EDIT: your-email@gmail.com]">
+          <span>✉️</span>
+          <div>
+            <b>Email</b>
+            <small>05250203.jnec@rub.edu.bt</small>
+          </div>
+        </a>
+
+        <a class="c-card" href="https://linkedin.com/in/[EDIT: your-linkedin]" target="_blank" rel="noopener">
+          <span>🔗</span>
+          <div>
+            <b>LinkedIn</b>
+            <small>linkedin.com/in/[EDIT: your-linkedin]</small>
+          </div>
+        </a>
+
+        <a class="c-card" href="https://github.com/20100175110361-tech/student_portfolio" target="_blank" rel="noopener">
+          <span>🐙</span>
+          <div>
+            
+            <b>GitHub</b>
+            <small>https://github.com/05250203jnec-netizen/student_portfolio</small>
+          </div>
+        </a>
+<a class="c-card" href="tel:+97517XXXXXX">
+  <span>📞</span>
+  <div>
+    <b>Phone</b>
+    <small>+975 77361481</small>
+  </div>
+</a>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <input id="fName" placeholder="Your Name" autocomplete="name">
+        <input id="fEmail" type="email" placeholder="Your Email" autocomplete="email">
+        <textarea id="fMsg" rows="4" placeholder="Your Message"></textarea>
+        <p class="error" id="formMsg" role="alert"></p>
+        <button class="btn primary" type="submit">✈ Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><p id="footer"></p></footer>
+<button id="toTop" aria-label="Back to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
+
+
